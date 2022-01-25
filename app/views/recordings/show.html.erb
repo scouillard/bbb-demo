@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Recording:</strong>
+  <%= @recording.recording_id %>
+</p>
+
+<p>
+  <strong>Meeting:</strong>
+  <%= @recording.meeting_id %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @recording.state %>
+</p>
+
+<p>
+  <strong>Publish:</strong>
+  <%= @recording.publish %>
+</p>
+
+<%= link_to 'Edit', edit_recording_path(@recording) %> |
+<%= link_to 'Back', recordings_path %>

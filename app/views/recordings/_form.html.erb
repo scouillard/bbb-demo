@@ -1,0 +1,37 @@
+<%= form_with(model: recording, local: true) do |form| %>
+  <% if recording.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(recording.errors.count, "error") %> prohibited this recording from being saved:</h2>
+
+      <ul>
+        <% recording.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :recording_id %>
+    <%= form.text_field :recording_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :meeting_id %>
+    <%= form.text_field :meeting_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :state %>
+    <%= form.text_field :state %>
+  </div>
+
+  <div class="field">
+    <%= form.label :publish %>
+    <%= form.check_box :publish %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

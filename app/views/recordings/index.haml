@@ -1,0 +1,28 @@
+= console
+%p#notice= notice
+%h1 Recordings
+%table
+  %thead
+    %tr
+      %th Recording
+      %th Meeting
+      %th State
+      %th Publish
+      %th{:colspan => "3"}
+  %tbody
+    - @recordings.each do |recording|
+      %tr
+        %td= recording.recording_id
+        %td= recording.meeting_id
+        %td= recording.meeting_state
+        %td= recording.publish
+
+        %td= link_to 'Publish/Unpublish', publish_path(:recording_id => recording.recording_id, :publish => recording.publish)
+        %td= link_to 'Destroy', destroy_recording_path(:recording_id => recording.recording_id)
+
+        -# %td= link_to 'Destroy', :controller => 'recordings#destroy_recording', :recording_id => recording.recording_id, method: :delete, data: { confirm: 'Are you sure?' }
+
+
+%br/
+
+= link_to "All Meetings", meetings_path

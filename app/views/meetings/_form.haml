@@ -1,0 +1,35 @@
+= console
+= form_with(model: meeting, local: true) do |form|
+  - if meeting.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(meeting.errors.count, "error")
+        prohibited this meeting from being saved:
+      %ul
+        - meeting.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = form.label :name
+    = form.text_field :name, :value => "#{current_user.name}'s meeting"
+
+  .field
+    = form.label :welcome_message
+    = form.text_area :welcome_message
+
+  .field
+    = form.label :meeting_record, 'Do you want the meeting to be recorded?'
+    = form.check_box :meeting_record
+
+  .field
+    = form.text_field :external_meeting_id, :value => initialize_meeting_id, readonly: true
+
+  .field
+    = form.label :moderator_password
+    = form.text_field :moderator_password, :value => initialize_meeting_password, readonly: true
+
+  .field
+    = form.label :attendee_password
+    = form.text_field :attendee_password, :value => initialize_meeting_password, readonly: true
+
+  .actions
+    = form.submit
