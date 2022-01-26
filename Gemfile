@@ -32,6 +32,12 @@ gem 'haml'
 
 gem 'devise'
 
+gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
+
+gem 'omniauth-google-oauth2'
+
+gem "omniauth-rails_csrf_protection"
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
