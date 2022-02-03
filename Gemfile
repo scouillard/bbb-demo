@@ -40,7 +40,6 @@ gem 'omniauth-google-oauth2'
 
 gem "omniauth-rails_csrf_protection"
 
-gem 'rubocop', '~> 1.25'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -48,6 +47,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rubocop', '~> 1.2', require: false
+  gem 'rubocop-rails', '~> 2.8.0', require: false
 end
 
 group :development do
