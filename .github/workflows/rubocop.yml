@@ -16,4 +16,4 @@ jobs:
     - name: Run RuboCop
       run: |
         bundle install
-        bundle exec rubocop --parallel --auto-correct
+        bundle exec rubocop --auto-correct
