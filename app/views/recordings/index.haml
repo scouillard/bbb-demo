@@ -15,7 +15,9 @@
         %td= recording.recording_id
         %td= recording.meeting_id
         %td= recording.meeting_state
-        %td= recording.publish
+
+        -# this needs to be replaced by ruby/js insertAdjacentHTML
+        %td#publish= recording.publish
 
         %td= link_to 'Publish/Unpublish', publish_path(:recording_id => recording.recording_id, :publish => recording.publish)
         %td= link_to 'Destroy', destroy_recording_path(:recording_id => recording.recording_id)
