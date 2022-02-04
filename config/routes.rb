@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-
   devise_for :users, controllers: {
     sessions: 'users/sessions',
-    omniauth_callbacks: 'users/omniauth_callbacks'
+    omniauth_callbacks: 'users/omniauth_callbacks',
   }
 
   # resources :meetings do
@@ -19,6 +18,4 @@ Rails.application.routes.draw do
 
   # get 'auth/google', as: 'google_login'
   # get '/auth/:provider/callback', to: 'sessions#update'
-
-
 end

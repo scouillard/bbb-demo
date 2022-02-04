@@ -273,7 +273,8 @@ Devise.setup do |config|
   # up on your models and hooks.
   config.omniauth :github, Rails.application.credentials.github_client_id, Rails.application.credentials.github_client_secret
 
-  config.omniauth :google_oauth2, Rails.application.credentials.google_client_id, Rails.application.credentials.google_client_secret
+  config.omniauth :google_oauth2, Rails.application.credentials.google_client_id,
+                  Rails.application.credentials.google_client_secret
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
