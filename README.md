@@ -25,4 +25,5 @@ Things you may want to cover:
 
 * Github Actions
 
-* Rubocop
+* Rubocop PLS
+
