@@ -1,15 +1,14 @@
-
+require:
+  - rubocop-rails
 
 AllCops:
   Exclude:
-  - 'db/schema.rb'
+  - Gemfile
+  - Rakefile
+  - 'node_modules/**/*'
+  - 'tmp/**/*'
   - 'vendor/**/*'
-  DisabledByDefault: false
-  TargetRubyVersion: 2.7
-  NewCops: enable
+  - 'db/schema.rb'
+  - '.git/**/*'
 
-Style/BlockDelimiters:
-  Enabled: false
-# Checks if uses of quotes match the configured preference.
-Style/StringLiterals:
-  Enabled: false
+  TargetRubyVersion: 2.7
