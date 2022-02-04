@@ -11,5 +11,5 @@ AllCops:
 Layout/HashAlignment:
   EnforcedHashRocketStyle: [ key, table ]
   EnforcedColonStyle: [ key, table ]
-Layout/LineLength
+Layout/LineLength:
   Max: 50
