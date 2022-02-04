@@ -1,6 +1,7 @@
 = console
+
 %p#notice= notice
-%h1 Recordings
+%h1#recording Recordings
 %table
   %thead
     %tr
@@ -17,12 +18,12 @@
         %td= recording.meeting_state
 
         -# this needs to be replaced by ruby/js insertAdjacentHTML
-        %td#publish= recording.publish
+        -# %td#publish_state
+        %td.publish_state= recording.publish
 
         %td= link_to 'Publish/Unpublish', publish_path(:recording_id => recording.recording_id, :publish => recording.publish)
-        %td= link_to 'Destroy', destroy_recording_path(:recording_id => recording.recording_id)
 
-        -# %td= link_to 'Destroy', :controller => 'recordings#destroy_recording', :recording_id => recording.recording_id, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Destroy', destroy_recording_path(:recording_id => recording.recording_id)
 
 
 %br/

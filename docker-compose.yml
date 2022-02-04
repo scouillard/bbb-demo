@@ -1,0 +1,52 @@
+version: '3.8'
+services:
+  db:
+    container_name: postgres-db
+    image: postgres:latest
+    environment:
+      - POSTGRES_PASSWORD=password
+    ports:
+      - "5432:5432"
+    volumes:
+      - "dbdata:/varv/lib/postgresql/data"
+
+  app:
+    container_name: puma-server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:password@db:5432/postgres
+    volumes:
+      - .:/app
+
+
+  #TODO change from Dockerfile to image
+  nginx:
+    container_name: nginx
+    build:
+      context: .
+      #what does the ./ does, removing it doesnt seem to change anything
+      dockerfile: ./nginx.Dockerfile
+    depends_on:
+      - app
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt
+
+  # certbot:
+  #   image: certbot/certbot
+  #   container_name: certbot
+  #   volumes:
+  #     - ./certbot/conf:/etc/letsencrypt
+  #     - ./certbot/www:/var/www/certbot
+  #   command: certonly --webroot -w /var/www/certbot --force-renewal -d rails-demo.samuel.blindside-dev.com --agree-tos -v
+
+volumes:
+  dbdata:

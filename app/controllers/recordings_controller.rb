@@ -7,20 +7,18 @@ class RecordingsController < ApplicationController
 
   # GET /recordings or /recordings.json
   def index
+    get_recordings
+  end
+
+  def get_recordings
     @recordings = []
 
     bbb.get_recordings[:recordings].each_with_index do |recording, i|
-
-
       @recording = Recording.new
       @recording.recording_id = recording[:recordID]
       @recording.meeting_id = recording[:meetingID]
       @recording.meeting_state = recording[:state]
       @recording.publish = recording[:published]
-
-      # before saving, creating new records, need to check if doesnt exist already. if does exist, go get it not create new
-      # @recording.save
-      #
       @recordings.push(@recording)
     end
 
@@ -68,24 +66,34 @@ class RecordingsController < ApplicationController
     end
   end
 
+
+
+
   def destroy_recording
-    recording = params[:recording_id]
-    bbb.delete_recordings(recording)
+    @recording = params[:recording_id]
+    bbb.delete_recordings(@recording)
 
     redirect_to recordings_path
   end
 
   def publish
-    recording = params[:recording_id]
-    publish = params[:publish]
+    # recording = Recording.find(params[:recording_id])
+    @recording = params[:recording_id]
+    @publish = params[:publish]
 
-    if publish.to_s == 'true'
-      bbb.publish_recordings(recording, false)
-    elsif publish.to_s == 'false'
-      bbb.publish_recordings(recording, true)
-    end 
+    #infinite loop here?
+    #TODO finish AJAX integration
+    if @publish.to_s == 'true'
+      bbb.publish_recordings(@recording, false)
+    elsif @publish.to_s == 'false'
+      bbb.publish_recordings(@recording, true)
+    end
 
-    redirect_to recordings_path
+    respond_to do |format|
+      format.html { redirect_to recordings_path }
+      format.js
+    end
+
   end
 
 
