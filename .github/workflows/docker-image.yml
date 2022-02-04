@@ -7,8 +7,8 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
-  
+  push_to_registry:
+    name: Build and Publish Docker Image
     runs-on: ubuntu-latest
 
     steps:
