@@ -3,11 +3,6 @@ require:
 
 AllCops:
   Exclude:
-  - Gemfile
-  - Rakefile
-  - 'node_modules/**/*'
-  - 'tmp/**/*'
+  - 'db/schema.rb'
   - 'vendor/**/*'
-  - '.git/**/*'
-
   TargetRubyVersion: 2.7
