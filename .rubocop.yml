@@ -1,15 +1,16 @@
-inherit_mode:
-  merge:
-    - Exclude
 require:
   - rubocop-rails
+
 AllCops:
-  TargetRubyVersion: 2.7.0
   Exclude:
-    - db/schema.rb
-    - vendor/bundle/**/*
-Layout/HashAlignment:
-  EnforcedHashRocketStyle: [ key, table ]
-  EnforcedColonStyle: [ key, table ]
-Layout/LineLength:
-  Max: 50
+  - 'db/schema.rb'
+  - 'vendor/**/*'
+  DisabledByDefault: false
+  TargetRubyVersion: 2.7
+  NewCops: enable
+
+Style/BlockDelimiters:
+  Enabled: false
+# Checks if uses of quotes match the configured preference.
+Style/StringLiterals:
+  Enabled: false
