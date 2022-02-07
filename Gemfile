@@ -42,6 +42,8 @@ gem 'omniauth-google-oauth2'
 
 gem 'omniauth-rails_csrf_protection'
 
+gem 'dotenv-rails'
+
 #workaround for Alpine on Github Actions
 gem "sassc", "< 2.2.0"
 
