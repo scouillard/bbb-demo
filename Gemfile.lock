@@ -244,10 +244,10 @@ GEM
       unicode-display_width (>= 1.4.0, < 3.0)
     rubocop-ast (1.15.1)
       parser (>= 3.0.1.1)
-    rubocop-rails (2.8.1)
+    rubocop-rails (2.9.1)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
-      rubocop (>= 0.87.0)
+      rubocop (>= 0.90.0, < 2.0)
     ruby-progressbar (1.11.0)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
@@ -329,8 +329,8 @@ DEPENDENCIES
   pg
   puma (~> 4.1)
   rails (~> 6.0.4, >= 6.0.4.4)
-  rubocop (~> 1.2)
-  rubocop-rails (~> 2.8.0)
+  rubocop (~> 1.25)
+  rubocop-rails (~> 2.9.0)
   sass-rails (>= 6)
   selenium-webdriver
   spring
