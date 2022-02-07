@@ -40,4 +40,4 @@ jobs:
           
        
       - name: Run Rubocop
-        run: bundle exec rubocop --parallel   
+        run: bundle exec rubocop --parallel --fail-level E
