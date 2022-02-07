@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -43,14 +45,12 @@ gem 'omniauth-rails_csrf_protection'
 gem 'rubocop', '~> 1.25'
 gem 'rubocop-rails', '~> 2.9.0'
 
-
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-
 end
 
 group :development do

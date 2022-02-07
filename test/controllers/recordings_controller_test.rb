@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 class RecordingsControllerTest < ActionDispatch::IntegrationTest
@@ -19,7 +21,7 @@ class RecordingsControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Recording.count') do
       post recordings_url,
            params: { recording: { meeting_id: @recording.meeting_id, publish: @recording.publish, recording_id: @recording.recording_id,
-                                  state: @recording.state, } }
+                                  state: @recording.state } }
     end
 
     assert_redirected_to recording_url(Recording.last)
@@ -38,7 +40,7 @@ class RecordingsControllerTest < ActionDispatch::IntegrationTest
   test 'should update recording' do
     patch recording_url(@recording),
           params: { recording: { meeting_id: @recording.meeting_id, publish: @recording.publish, recording_id: @recording.recording_id,
-                                 state: @recording.state, } }
+                                 state: @recording.state } }
     assert_redirected_to recording_url(@recording)
   end
 

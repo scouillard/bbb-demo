@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MeetingsController < ApplicationController
   include BbbHelper
 
@@ -47,7 +49,7 @@ class MeetingsController < ApplicationController
       welcome: @meeting.welcome_message,
       record: @meeting.meeting_record,
       attendeePW: @meeting.attendee_password,
-      moderatorPW: @meeting.moderator_password,
+      moderatorPW: @meeting.moderator_password
     }
 
     # APPENDS API CALLBACK URL IF RECORDING IS SELECTED

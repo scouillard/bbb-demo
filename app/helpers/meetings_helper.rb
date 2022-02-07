@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module MeetingsHelper
   # Generates a GUID value for BBB MeetingID
   def initialize_meeting_id

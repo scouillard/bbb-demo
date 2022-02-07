@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RecordingsController < ApplicationController
   include BbbHelper
 
@@ -73,9 +75,10 @@ class RecordingsController < ApplicationController
 
     # infinite loop here?
     # TODO finish AJAX integration
-    if @publish.to_s == 'true'
+    case @publish.to_s
+    when 'true'
       bbb.publish_recordings(@recording, false)
-    elsif @publish.to_s == 'false'
+    when 'false'
       bbb.publish_recordings(@recording, true)
     end
 
