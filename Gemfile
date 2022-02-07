@@ -36,7 +36,7 @@ gem 'haml'
 
 gem 'devise'
 
-gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
+gem 'omniauth-github'
 
 gem 'omniauth-google-oauth2'
 
