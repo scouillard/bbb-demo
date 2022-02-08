@@ -1,5 +1,5 @@
 current directory: /home/samuel/blindside/bbb-demo/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.10.3/ext/bootsnap
-/home/samuel/.rbenv/versions/2.7.0/bin/ruby -I /home/samuel/.rbenv/versions/2.7.0/lib/ruby/2.7.0 -r ./siteconf20220208-65226-1n5tcof.rb extconf.rb
+/home/samuel/.rbenv/versions/2.7.0/bin/ruby -I /home/samuel/.rbenv/versions/2.7.0/lib/ruby/2.7.0 -r ./siteconf20220208-90116-15vogmp.rb extconf.rb
 creating Makefile
 
 current directory: /home/samuel/blindside/bbb-demo/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.10.3/ext/bootsnap
@@ -12,4 +12,4 @@ linking shared-object bootsnap/bootsnap.so
 
 current directory: /home/samuel/blindside/bbb-demo/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.10.3/ext/bootsnap
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 bootsnap.so ./.gem.20220208-65226-kiw5s3/bootsnap
+/usr/bin/install -c -m 0755 bootsnap.so ./.gem.20220208-90116-lv38dx/bootsnap
