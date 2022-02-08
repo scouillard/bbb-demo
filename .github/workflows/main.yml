@@ -43,8 +43,7 @@ jobs:
         env:
           DATABASE_URL: postgres://postgres:postgres@localhost:5432/postgres
           RAILS_ENV: test
-        run:  |
-          bundle exec rails db:prepare
+        run: bundle exec rails db:prepare
           
       - name: Run Rubocop
         run: bundle exec rubocop --parallel --fail-level W
