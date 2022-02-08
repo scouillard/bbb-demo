@@ -1,5 +1,5 @@
 current directory: /home/samuel/blindside/bbb-demo/vendor/bundle/ruby/2.7.0/gems/ffi-1.15.5/ext/ffi_c
-/home/samuel/.rbenv/versions/2.7.0/bin/ruby -I /home/samuel/.rbenv/versions/2.7.0/lib/ruby/2.7.0 -r ./siteconf20220207-139298-ob70z0.rb extconf.rb
+/home/samuel/.rbenv/versions/2.7.0/bin/ruby -I /home/samuel/.rbenv/versions/2.7.0/lib/ruby/2.7.0 -r ./siteconf20220208-65226-18fjszj.rb extconf.rb
 checking for ffi.h... no
 checking for ffi.h in /usr/local/include,/usr/include/ffi,/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/ffi,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/ffi... no
 checking for whether -Wl,--exclude-libs,ALL is accepted as LDFLAGS... yes
@@ -162,4 +162,4 @@ compiling Types.c
 compiling Variadic.c
 compiling ffi.c
 linking shared-object ffi_c.so
-/usr/bin/install -c -m 0755 ffi_c.so ./.gem.20220207-139298-126z6wv
+/usr/bin/install -c -m 0755 ffi_c.so ./.gem.20220208-65226-1rk3qt8

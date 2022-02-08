@@ -1,5 +1,5 @@
 current directory: /home/samuel/blindside/bbb-demo/vendor/bundle/ruby/2.7.0/gems/msgpack-1.4.4/ext/msgpack
-/home/samuel/.rbenv/versions/2.7.0/bin/ruby -I /home/samuel/.rbenv/versions/2.7.0/lib/ruby/2.7.0 -r ./siteconf20220207-16619-1ycmvl4.rb extconf.rb
+/home/samuel/.rbenv/versions/2.7.0/bin/ruby -I /home/samuel/.rbenv/versions/2.7.0/lib/ruby/2.7.0 -r ./siteconf20220208-65226-1gycnt7.rb extconf.rb
 checking for ruby/st.h... yes
 checking for st.h... yes
 checking for rb_enc_interned_str() in ruby.h... no
@@ -76,4 +76,4 @@ linking shared-object msgpack/msgpack.so
 
 current directory: /home/samuel/blindside/bbb-demo/vendor/bundle/ruby/2.7.0/gems/msgpack-1.4.4/ext/msgpack
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 msgpack.so ./.gem.20220207-16619-1lnzq1r/msgpack
+/usr/bin/install -c -m 0755 msgpack.so ./.gem.20220208-65226-1jiho14/msgpack
