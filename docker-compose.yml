@@ -11,7 +11,7 @@ services:
       - "dbdata:/varv/lib/postgresql/data"
 
   app:
-    container_name: puma-server
+    container_name: rails-app
     build:
       context: .
       dockerfile: Dockerfile
@@ -24,29 +24,19 @@ services:
     volumes:
       - .:/app
 
-
-  #TODO change from Dockerfile to image
   nginx:
-    container_name: nginx
-    build:
-      context: .
-      #what does the ./ does, removing it doesnt seem to change anything
-      dockerfile: ./nginx.Dockerfile
-    depends_on:
-      - app
+    container_name: nginx-reverse-proxy
+    image: nginx:latest
     ports:
       - "80:80"
       - "443:443"
+    depends_on:
+      - app
     volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
       - /etc/letsencrypt:/etc/letsencrypt
 
-  # certbot:
-  #   image: certbot/certbot
-  #   container_name: certbot
-  #   volumes:
-  #     - ./certbot/conf:/etc/letsencrypt
-  #     - ./certbot/www:/var/www/certbot
-  #   command: certonly --webroot -w /var/www/certbot --force-renewal -d rails-demo.samuel.blindside-dev.com --agree-tos -v
 
+#TODO what is this
 volumes:
   dbdata:

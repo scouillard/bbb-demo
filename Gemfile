@@ -45,7 +45,7 @@ gem 'omniauth-rails_csrf_protection'
 gem 'dotenv-rails'
 
 #workaround for Alpine on Github Actions
-gem "sassc", "< 2.2.0"
+# gem "sassc", "< 2.2.0"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
