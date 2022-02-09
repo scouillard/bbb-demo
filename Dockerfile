@@ -25,7 +25,9 @@ COPY . /app/
 
 ENV BUNDLE_PATH /gems
 RUN yarn -y install
+RUN bundle config force_ruby_platform true
 RUN bundle install
+
 
 ENTRYPOINT ["bin/rails"]
 CMD  ["s", "-b", "0.0.0.0"]
