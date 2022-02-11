@@ -24,9 +24,12 @@ WORKDIR /app
 COPY . /app/
 
 ENV BUNDLE_PATH /gems
-RUN yarn -y install
+RUN yarn -y install --force --verbose
+RUN yarn install node-sass
+RUN ls /app/node_modules/node-sass/vendor/
 RUN bundle config force_ruby_platform true
 RUN bundle install
+
 
 
 ENTRYPOINT ["bin/rails"]

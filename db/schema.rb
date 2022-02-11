@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2022_01_24_193401) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "meetings", force: :cascade do |t|
     t.string "external_meeting_id"
     t.string "name"

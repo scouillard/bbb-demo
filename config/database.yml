@@ -17,6 +17,7 @@ default: &default
 
 development:
   <<: *default
+  url: postgres://postgres:docker@localhost
   database: bbb_demo_development
 
 # Warning: The database defined as "test" will be erased and
