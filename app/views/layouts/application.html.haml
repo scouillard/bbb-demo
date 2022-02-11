@@ -1,10 +1,11 @@
 !!!
 %html
   %head
-    %title BbbDemo
+    %title BBB demo app
     = csrf_meta_tags
     = csp_meta_tag
     %meta{:content => "width=device-width, initial-scale=1, shrink-to-fit=no", :name => "viewport"}/
+
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
@@ -36,17 +37,16 @@
                   %a.dropdown-item{:href => "#"} Something else here
             %li.nav-item
               %a.nav-link.disabled Disabled
-          %form.d-flex
-            %input.form-control.me-2{"aria-label" => "Search", :placeholder => "Search", :type => "search"}/
-            %button.btn.btn-outline-success{:type => "submit"} Search
 
 
-    - if current_user
-      %strong
-        = "Welcome #{current_user.name}!"
-        = link_to "Log Out", destroy_user_session_path, method: :delete
-    - else
-      = link_to "Sign In", new_user_session_path
-      = link_to "Create Account", new_user_registration_path
+          .nav-item.ml-auto
+            - if current_user
+              %strong
+                = "Welcome #{current_user.name}!"
+                = link_to "Log Out", destroy_user_session_path, method: :delete
+            - else
+              = link_to "Sign In", new_user_session_path, class: "btn btn-primary text-light"
+              = link_to "Create Account", new_user_registration_path, class: "btn btn-outline-primary text-primary"
+
 
     = yield

@@ -1,0 +1,18 @@
+
+
+body {
+  background-color:  #BBE0E8 !important;
+}
+
+.btn-outline-primary {
+  &:hover {
+    color: white !important;
+  }
+}
+
+.btn-primary {
+  &:hover {
+    background-color: white !important;
+    color: #0275d8 !important;
+  }
+}

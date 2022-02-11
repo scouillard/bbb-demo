@@ -14,22 +14,7 @@ class MeetingsController < ApplicationController
   def index
     @meetings = Meeting.all
 
-    # @recordings = []
-    #
-    # bbb.get_recordings[:recordings].each_with_index do |recording, i|
-    #
-    #
-    #   @recording = Recording.new
-    #   @recording.recording_id = recording[:recordID]
-    #   @recording.meeting_id = recording[:meetingID]
-    #   @recording.meeting_state = recording[:state]
-    #   @recording.publish = recording[:published]
-    #
-    #   # before saving, creating new records, need to check if doesnt exist already. if does exist, go get it not create new
-    #   # @recording.save
-    #
-    #   @recordings.push(@recording)
-    # end
+    get_recordings
   end
 
   # GET /meetings/1 or /meetings/1.json

@@ -65,7 +65,7 @@ class RecordingsController < ApplicationController
     @recording = params[:recording_id]
     bbb.delete_recordings(@recording)
 
-    redirect_to recordings_path
+    redirect_to root_path
   end
 
   def publish
@@ -83,7 +83,7 @@ class RecordingsController < ApplicationController
     end
 
     respond_to do |format|
-      format.html { redirect_to recordings_path }
+      format.html { redirect_to root_path }
       format.js
     end
   end
